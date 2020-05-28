@@ -3,18 +3,13 @@ import {
 	Text,
 	View,
 	StyleSheet,
-	TouchableHighlight,
-	TouchableNativeFeedback,
-	TouchableOpacity,
-	TouchableWithoutFeedback
+	Slider
 } from 'react-native';
 import AddEntry  from './components/AddEntry';
 import { getMetricMetaInfo } from './utils/helpers';
+import UdaciSlider from './components/UdaciSlider';
 
 export default class App extends React.Component {
-	handlePress = () => {
-		alert('Hello!')
-	}
 	render() {
 		return (
 	    <View style={styles.container}>

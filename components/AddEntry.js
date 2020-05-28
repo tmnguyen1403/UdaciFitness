@@ -16,10 +16,10 @@ function SubmitBtn ({ onPress }) {
 export default class AddEntry extends Component {
 	state = {
 		run: 0,
-		bike: 10,
+		bike: 0,
 		swim: 0,
 		sleep: 0,
-		eat: 5,
+		eat: 0,
 	}
 	increment = (metric) => {
 		const { max, step } = getMetricMetaInfo(metric)
@@ -75,7 +75,6 @@ export default class AddEntry extends Component {
 		return (
 			<View>
 				<DateHeader date={ (new Date()).toLocaleDateString() }></DateHeader>
-				<Text>{JSON.stringify(this.state)}</Text>
 				{Object.keys(metaInfo).map( (key) => {
 					const { getIcon, type, ...rest} = metaInfo[key]
 					const value = this.state[key]
