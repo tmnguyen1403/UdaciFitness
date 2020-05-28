@@ -3,18 +3,28 @@ import {
 	Text,
 	View,
 	StyleSheet,
-	Slider
+	Slider,
+	Switch,
+	TextInput,
+	Image,
+	KeyboardAvoidingView
 } from 'react-native';
 import AddEntry  from './components/AddEntry';
-import { getMetricMetaInfo } from './utils/helpers';
-import UdaciSlider from './components/UdaciSlider';
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './reducers'
+
 
 export default class App extends React.Component {
 	render() {
+
 		return (
-	    <View style={styles.container}>
-	    	<AddEntry alreadyLogged={false}/>
-	    </View>
+			<Provider store={createStore(reducer)}>
+				<View >
+				<AddEntry />
+				</View>
+			</Provider>
+
 	  );
 	}
 }
@@ -22,8 +32,8 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		marginLeft: 10,
-		marginRight: 10,
+		marginLeft: 5,
+		marginRight: 5,
 		alignItems: 'center',
 		justifyContent: 'center'
 	},
@@ -35,6 +45,14 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		borderRadius: 5,
+	},
+	input: {
+
+	},
+	img: {
+		width: 100,
+		height: 100,
+		borderRadius: 50,
 	},
 	btnText: {
 		color: '#fff'
