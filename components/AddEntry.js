@@ -15,7 +15,8 @@ function SubmitBtn ({ onPress }) {
 		return (
 			<TouchableOpacity
 				onPress={onPress}
-				style= {Platform.OS === 'ios' ? styles.iosSubmitBtn : styles.androidSubmitBtn}>
+				style= {Platform.OS === 'ios' ? styles.iosSubmitBtn : styles.androidSubmitBtn}
+				>
 				<Text style={styles.submitBtnText}>SUBMIT</Text>
 			</TouchableOpacity>
 		)
@@ -101,7 +102,7 @@ class AddEntry extends Component {
 							size={100}
 						/>
 						<Text>You already logged your information for today</Text>
-						<TextButton onPress={this.reset} style={{padding: 10}}>
+						<TextButton onPress={this.reset} style={{}}>
 							Reset
 						</TextButton>
 					</View>
