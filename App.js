@@ -7,7 +7,8 @@ import {
 	Switch,
 	TextInput,
 	Image,
-	KeyboardAvoidingView
+	KeyboardAvoidingView,
+	Platform
 } from 'react-native';
 import AddEntry  from './components/AddEntry';
 import { createStore } from 'redux'
